@@ -4,4 +4,5 @@ A website which automates the leave management process in Educational Institutio
 ## Screenshots  
 
 **Home Page**  
+  
 ![HomePage](Demo/screenshots/HomePage.png)
