@@ -16,7 +16,7 @@ In the proposed system work-flow is automated and employees get instant notifica
     2. To view History ( Previously applied leave applications 		along with status )
     3. Get details about extra periods assigned by person on 		leave 
     4. Get notifications for recently applied leaves 
-    5.Managing profile information.
+    5. Managing profile information.
 
 2. **Admin**  
 - Ex: HOD  
@@ -36,11 +36,11 @@ In the proposed system work-flow is automated and employees get instant notifica
     4. View list of employees on leave under any department on respective days
 
 4. **Establishment Section**  
-- The department in the college which keeps record of leaves applied by all employees.    
+- The department in the college which keeps record of all the leaves applied by the employees.    
 - Capabilities :
     1. Print leave report of any employee on demand 
-    2. Set RH dates on monthly basis 
-    3. Reset Leaves of employees on yearly basis
+    2. Set Restricted Holidays on monthly basis 
+    3. Reset Leaves of all employees on yearly basis
 
 ## Screenshots  
 
