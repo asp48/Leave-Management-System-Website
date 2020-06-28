@@ -1,0 +1,559 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!-- The following is for footer-->
+  <link rel="stylesheet" href="CSS/demo.css">
+	<link rel="stylesheet" href="CSS/footer-distributed-with-address-and-phones.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <style>
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+
+    .carousel-inner img {
+      width: 100%; /* Set width to 100% */
+      min-height: 200px;
+    }
+
+    /* Hide the carousel text when the screen is less than 600 pixels wide */
+    @media (max-width: 600px) {
+      .carousel-caption {
+        display: none; 
+      }
+    }
+  </style>
+  <style>
+    .footer-distributed{
+	background-color: #292c2f;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	width: 100%;
+	text-align: left;
+	font: bold 16px sans-serif;
+ 
+	padding: 55px 50px;
+	margin-top: 80px;
+}
+ 
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right{
+	display: inline-block;
+	vertical-align: top;
+}
+ 
+/* Footer left */
+ 
+.footer-distributed .footer-left{
+	width: 40%;
+}
+ 
+/* The company logo */
+ 
+.footer-distributed h3{
+	color:  #ffffff;
+	font: normal 36px 'Cookie', cursive;
+	margin: 0;
+}
+ 
+.footer-distributed h3 span{
+	color:  #5383d3;
+}
+ 
+/* Footer links */
+ 
+.footer-distributed .footer-links{
+	color:  #ffffff;
+	margin: 20px 0 12px;
+	padding: 0;
+}
+ 
+.footer-distributed .footer-links a{
+	display:inline-block;
+	line-height: 1.8;
+	text-decoration: none;
+	color:  inherit;
+}
+ 
+.footer-distributed .footer-company-name{
+	color:  #8f9296;
+	font-size: 14px;
+	font-weight: normal;
+	margin: 0;
+}
+ 
+/* Footer Center */
+ 
+.footer-distributed .footer-center{
+	width: 35%;
+}
+ 
+.footer-distributed .footer-center i{
+	background-color:  #33383b;
+	color: #ffffff;
+	font-size: 25px;
+	width: 38px;
+	height: 38px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 42px;
+	margin: 10px 15px;
+	vertical-align: middle;
+}
+ 
+.footer-distributed .footer-center i.fa-envelope{
+	font-size: 17px;
+	line-height: 38px;
+}
+ 
+.footer-distributed .footer-center p{
+	display: inline-block;
+	color: #ffffff;
+	vertical-align: middle;
+	margin:0;
+}
+ 
+.footer-distributed .footer-center p span{
+	display:block;
+	font-weight: normal;
+	font-size:14px;
+	line-height:2;
+}
+ 
+.footer-distributed .footer-center p a{
+	color:  #5383d3;
+	text-decoration: none;;
+}
+ 
+ 
+/* Footer Right */
+ 
+.footer-distributed .footer-right{
+	width: 20%;
+}
+ 
+.footer-distributed .footer-company-about{
+	line-height: 20px;
+	color:  #92999f;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 0;
+}
+ 
+.footer-distributed .footer-company-about span{
+	display: block;
+	color:  #ffffff;
+	font-size: 14px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+ 
+.footer-distributed .footer-icons{
+	margin-top: 25px;
+}
+ 
+.footer-distributed .footer-icons a{
+	display: inline-block;
+	width: 35px;
+	height: 35px;
+	cursor: pointer;
+	background-color:  #33383b;
+	border-radius: 2px;
+ 
+	font-size: 20px;
+	color: #ffffff;
+	text-align: center;
+	line-height: 35px;
+ 
+	margin-right: 3px;
+	margin-bottom: 5px;
+}
+ 
+/* If you don't want the footer to be responsive, remove these media queries */
+ 
+@media (max-width: 880px) {
+ 
+	.footer-distributed{
+		font: bold 14px sans-serif;
+	}
+ 
+	.footer-distributed .footer-left,
+	.footer-distributed .footer-center,
+	.footer-distributed .footer-right{
+		display: block;
+		width: 100%;
+		margin-bottom: 40px;
+		text-align: center;
+	}
+ 
+	.footer-distributed .footer-center i{
+		margin-left: 0;
+	}
+ 
+}
+  </style>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+ <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+
+
+ 
+ <script type = "text/javascript" language = "javascript">
+   $(document).ready(function(){
+        
+	$("#butt").click(function(){
+		var x=document.getElementById("user").value;
+	    var y=document.getElementById("pas").value;
+		$.post("try.php",
+        {
+		  username: x,
+          pass:y
+        },
+        function(data,status){
+        
+		console.log(data);
+            if(data=="500")
+			    window.location="faculty_home.html";
+			else{
+				 document.getElementById("span").innerHTML = "Invalid Username or password!";
+				 $("#myModal2").effect( "shake", {times:4}, 1000 );
+            }
+        });
+    });
+});
+
+</script>
+</head>
+<body >
+
+<!--nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="Prog1.html">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="Prog1.html"> <img src="logo1.jpg"  alt="Cinque Terre" class="img-responsive" class="img-thumbnail" width="250"></a></li>
+	</div>
+    <ul class="nav navbar-nav">
+      <li ><a href="#">Home</a></li>
+	  <li><a data-toggle="modal" data-target="#myModal" href="#">About</a></li>
+      <li><a class="page-scroll" href="#contact">Contact</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#" ><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="#" data-toggle="modal" data-target="#myModal2"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">About</h4>
+      </div>
+      <div class="modal-body">
+        <p>Leave Management System blah blah</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!--
+<div id="myModal1" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+-->
+    <!-- Modal content-->
+<!--	
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Contact</h4>
+      </div>
+      <div class="modal-body">
+        <p>Bmsce</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+-->
+<div id="myModal2" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-sm" >
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Please enter the details</h4>
+      </div>
+      <div class="modal-body">
+         <!--form method="post" action="test1.php">
+            <label class="input-group" for="Userid"><h4>Username</h4></label>	
+		    <input type="text" name="username" placeholder="Enter your Username"  required><br>
+		    <label for="Userid"><h4>Password</h4></label><br>
+		    <input  type="Password" name="pass" placeholder="Password" required><br><br>
+		    <a href="#">Forgot Password?</a><br><br>
+	        <input type="submit" value="Login">
+		 </form-->	
+		 <form>
+            <label class="input-group" for="Userid"><h4>Username</h4></label>	
+		    <input type="text" name="username"  id="user" class="form-control" placeholder="Enter your Username"  required><br>
+		    <label for="Userid"><h4>Password</h4></label><br>
+		    <input  type="Password" name="pass" id="pas" class="form-control" placeholder="Password" required><br><span id="span" style="color:red;"></span><br><br>
+		    <a href="#">Forgot Password?</a><br><br>
+	        <input type="button" class="btn btn-warning" id="butt" value="Login" />
+		 </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-lg-8">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <img src="bms800x400.png" alt="Image">
+          <div class="carousel-caption">
+            <h3>Entrance...</h3>
+            
+          </div>      
+        </div>
+
+        <div class="item">
+          <img src="bmsce_campus800x400.png" alt="Image">
+          <div class="carousel-caption">
+            <h3>Campus...</h3>
+          </div>      
+        </div>
+		
+		<div class="item">
+          <img src="bms_hostel800x400.png" alt="Image">
+          <div class="carousel-caption">
+            <h3>Hostel..</h3>
+            
+          </div>      
+        </div>
+      </div>
+
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-4">
+    <div class="well">
+      <p style=" text-indent:50px;" >The Department of MCA was started in the academic year 2003-04 with an 
+   approved intake of 60 students. It has a team of well qualified, experienced and 
+   educated faculty members.Six faculty members of the department are pursuing their Ph. D program. 
+   Computer laboratories are equipped with highend computers, servers and installed with necessary licensed software's. 
+   Performance of students in the university examinations and in placement through campus recruitment is excellent.
+   The department has state-of-the-art facilities. Students of the department bagged the 2nd and the 5th ranks in the VTU examinations 
+   for the year 2012.
+   Sri.B.S.Narayan, the dynamic and enterprising son of the founder, took over the reins of the college after the sad demise of 
+Sri.B.M.Sreenivasaiah. Under his able guidance, the BMS College of Engineering developed into one of the finest engineering colleges in the 
+country.&nbsp; He was also instrumental in initiating International Collaborative Programmes such as cross-cultural programmes with Melton 
+Foundatio.</p>
+	</div>
+    <!--div class="well">
+       <p>Upcoming Events..</p>
+    </div>
+    <div class="well">
+       <p>Visit Our Blog</p>
+    </div-->
+  </div>
+</div>
+<hr>
+</div>
+
+<div class="container-fluid text-center" style="background-color:#d7eb9f">    
+  <h3>About BMSCE</h3>
+  <br>
+  <div class="row">
+  <div class="col-sm-4">
+      <img src="BMS1400x210.png" class="img-responsive" style="width:100%" alt="Image">
+      <p><b>BMSCE</b></p>
+    </div>
+  <div class="col-sm-8">
+      <div class="well">
+       <p style=" text-indent:50px;">In the History of Karnataka, the name of Businayana Mukundadas &nbsp;Sreenivasaiah [BMS] occupies a prominent place in the field 
+of philanthropy. The Maharaja of Mysore honoured him with the title of Rajakarya Prasaktha in 1946.&nbsp; He started the BMS College 
+of Engineering in the same year.&nbsp; He had foreseen the urgent need for high-quality technical education in India, even before 
+independence.&nbsp; The ideals, for which B.M.Sreenivasaiah stood, continues to inspire the inheritors of his legacy.</p>
+
+<p>Sri.B.S.Narayan, the dynamic and enterprising son of the founder, took over the reins of the college after the sad demise of 
+Sri.B.M.Sreenivasaiah. Under his able guidance, the BMS College of Engineering developed into one of the finest engineering colleges in the 
+country.&nbsp; He was also instrumental in initiating International Collaborative Programmes such as cross-cultural programmes with Melton 
+Foundation, training foreign students under International Co-operation Division etc
+</p>
+
+      </div>
+    </div>
+    
+    <!--div class="col-sm-3"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Project 2</p>    
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+      <div class="well">
+       <p>Some text..</p>
+      </div>
+    </div-->  
+  </div>
+  <hr>
+</div>
+
+<div class="container-fuid text-center" >    
+  <h3>Trending @BMSCE</h3>
+  <br>
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="utsav400x210.png" class="img-responsive" style="width:100%" alt="Image">
+      <p><b>Utsav 2015</b></p>
+    </div>
+    <div class="col-sm-4"> 
+      <img src="images400x210.png" class="img-responsive" style="width:100%" alt="Image">
+      <p><b>Utsav 2016</b></p>    
+    </div>
+    <div class="col-sm-4"> 
+      <img src="pshift400x210.png" class="img-responsive" style="width:100%" alt="Image">
+      <p><b>phaseshift</b></p>
+    </div>
+    <!--div class="col-sm-2"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Partner 4</p>
+    </div> 
+    <div class="col-sm-2"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Partner 5</p>
+    </div>     
+    <div class="col-sm-2"> 
+      <img src="http://placehold.it/150x80?text=IMAGE" class="img-responsive" style="width:100%" alt="Image">
+      <p>Partner 6</p>
+    </div--> 
+  </div>
+</div><br>
+<!--
+<footer class="container-fluid text-center" style="background-color:#4d4d4d">
+  <p><b>Copyright 2016 @BMS</b></p>
+</footer>-->
+		<footer class="footer-distributed" id="contact">
+
+			<div class="footer-left">
+			    <img style="background-color:white;border-radius:50%;" src="logosm.png" width="20%">
+                <p class="footer-company-name">BMSCE &copy; 2016</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>Bull Temple Road,</span> Basavangudi, Bangalore-560019</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p> +91-80-26622130-35</p>
+				</div>
+				<div>
+					<i class="fa fa-fax"></i>
+					<p>+91-80-26614357</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">lms.bmsce@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+
+			</div>
+
+		</footer>
+</body>
+</html>
+
+<!-- Hosting24 Analytics Code -->
+<script type="text/javascript" src="http://stats.hosting24.com/count.php"></script>
+<!-- End Of Analytics Code -->

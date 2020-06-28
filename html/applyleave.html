@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   
+         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <title>Apply Leave</title>
+     
+	 <!-- The following is for footer-->
+	  <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	 <script src="applyleave.js"></script>
+</head>
+  <body style="background-color:white">
+    <div id="wrapper">
+               <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html" style="padding:0;"><img src="logo.jpg" width="70%"/></a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Amit Prabhu <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-user"></i> View Profile</a>
+                        </li>
+						<li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="charts.html"><i class="fa fa-fw fa-thumbs-up"></i> Profile Approval</a>
+                    </li>
+                    <li>
+                        <a href="setrhd.html"><i class="fa fa-fw fa-check-circle-o"></i> Leave Approval</a>
+                    </li>
+                    <li class="active">
+                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Apply Leave</a>
+                    </li>
+					<li>
+                        <a href="forms.html"><i class="fa fa-fw fa-history"></i> History</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>  
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+     <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-fw fa-edit"></i> Apply Leave
+                            </li>
+                        </ol>
+			<div class="jumbotron">
+                    <h2>Application is Pending</h2>
+                    <p>You cannot apply for another leave until there is a pending application.However You can view the details of your application by going to history</p>
+                    <p><a href="#" class="btn btn-primary btn-lg" role="button">History &raquo;</a>
+                    </p>
+                </div>
+     <form role="form" id="application">
+	 <p><input type="hidden" id="fid" value="" name="Fid"/><input type="hidden" value="" id="sid" name="Sid"/></p>
+	 <div class="col-lg-10 col-md-offset-2">
+	       <div class="row form-group">
+	                    <div class="col-lg-5">
+	                        <label>Type of Leave</label>
+	                    </div>
+	                    <div class="col-lg-5">
+	                        <select class="form-control" id="typel" name="typl">
+	                            <option value="CL">CL</option>
+								<option value="RH">RH</option>
+								<option value="EL">EL</option>
+	                            <option value="OOD">OOD</option>
+								<option value="SPCL">SPCL</option>
+	                        </select>
+	                    </div>
+	        </div>
+			<div class="row form-group" id="hfd">
+	                    <div class="col-lg-5 text-center">
+	                       <label> <input value="0" type="radio" name="period"/> Halfday</label>
+	                    </div>
+	                    <div class="col-lg-5 text-center">
+	                       <label><input id="ff" checked="checked" value="1" type="radio" name="period"> Fullday</label> 
+	                    </div>
+	        </div>
+			<div class="row form-group" id="froml">
+	            <div class="col-lg-5">
+	                        <label>From </label>
+	                    </div>
+	                    <div class="col-lg-5">
+	                        <input class="form-control dates" id="from" type="text" name="fromD" >
+	                     </div>
+	        </div>
+			<div class="row form-group" id="tol">
+	            <div class="col-lg-5">
+	                        <label>To </label>
+	                    </div>
+	                    <div class="col-lg-5">
+	                        <input class="form-control dates" id="to" type="text" name="toD" >
+	                     </div>
+	            </div>
+			<div class="row form-group" id="onl">
+	            <div class="col-lg-5">
+	                        <label>On </label>
+	                    </div>
+	                    <div class="col-lg-5">
+	                       <input class="form-control dates" id="on" type="text" name="onD">
+	                     </div>
+	            </div>
+	        <div class="row form-group" id="ppl">
+	            <div class="col-lg-5 text-center">
+	                      <label><input type="radio" value="1" name="pp" /> PreLunch</label>
+	                    </div>
+	                    <div class="col-lg-5 text-center">
+	                       <label><input  type="radio" value="2" name="pp"/> PostLunch</label> 
+	                     </div>
+	        </div>
+			<div class="row form-group">
+	            <div class="col-lg-5">
+	                        <label>No of Days </label>
+	                    </div>
+	                    <div class="col-lg-5">
+	                       <select class="form-control" name="ndays" id="nd">
+						   </select>
+	                     </div>
+	            </div>
+			<div class="row form-group" id="fal">
+	            <div class="col-lg-5">
+	                        <label>Financial Assistance</label>
+	                    </div>
+	                    <div class="col-lg-5">
+	                       <input id="fa" class="form-control" type="checkbox" name="fasst">
+	                     </div>
+	            </div>
+			<div class="row form-group" id="amtl">
+	            <div class="col-lg-5">
+	                        <label> Amount  </label>
+	                    </div>
+	                    <div class="col-lg-5">
+						<div class="input-group">
+	                       <span class="input-group-addon">Rs</span>
+						   <input class="form-control" type="text" name="amt">
+						 </div>
+	                     </div>
+	        </div>
+	 <script>$('#fal').hide();$('#amtl').hide();$('#onl').hide();$('#ppl').hide();</script>
+	        <div class="row form-group">
+	            <div class="col-lg-5">
+	                        <label> Reason  </label>
+	                    </div>
+	                    <div class="col-lg-5">
+	                        <select id="rsn" class="form-control" name="reason">
+						     <option>Function</option>
+	                         <option>Not Feeling Well</option>
+	                         <option>Other</option>
+	                        </select>
+	                     </div>
+	            </div>
+	        <div class="row form-group" id="orsn">
+	            <div class="col-lg-10">
+	                        <textarea name="reason" class="form-control" cols="50" placeholder="Mention Reason"></textarea>
+	                    </div>
+	            </div>
+	 <script>$('#orsn').hide();</script>
+	        <div class="row form-group alternative">
+	            <div>
+				           <div class="col-lg-5">
+	                        <label> Alternative  </label>
+							</div>
+							<div class="col-lg-5">
+	                        <button type="button" class="btn btn-primary add">+</button>
+							</div>
+	                    </div>
+						<div class="altrow">
+	                    <div class="col-lg-3">
+	                       <select class="form-control flist" name="alt" >
+						   <option>Select Faculty</option>
+						   </select>
+	                     </div>
+						 <div class="col-lg-2">
+	                       <input type="text" class="form-control alton" placeholder="On"/>
+	                     </div>
+						 <div class="col-lg-2">
+	                       <select class="form-control tfrom">
+						   <option>From</option>
+						   </select>
+	                     </div>
+						 <div class="col-lg-2">
+						    <select class="form-control ttill">
+						   <option>Till</option>
+						   </select>
+	                     </div>
+						 <div class="col-lg-1">
+	                       <select class="form-control sec">
+						   <option>Class</option>
+						   </select>
+	                     </div>
+						 <div class="col-lg-1">
+	                       <button type="button" class="btn btn-danger remove">-</button>
+	                     </div>
+						 </div>
+	                </div>
+			<div class="row form-group">
+	            <div class="col-lg-5 text-center">
+	                        <input id="apply" class="btn btn-success" type="button" value="Submit" />
+	                    </div>
+	                    <div class="col-lg-5 text-center">
+	                       <input id="reset" class="btn btn-danger" type="reset" value="Reset" />
+	                     </div>
+	        </div>
+	 </div>
+     </form>
+	 </div>
+            <!-- /.container-fluid -->
+        </div>
+        <!-- /#page-wrapper -->
+			<footer class="footer-distributed align:bottom">
+
+			<div class="footer-left">
+			    <img style="background-color:white;border-radius:50%;" src="logosm.png" width="20%">
+                <p class="footer-company-name">BMSCE &copy; 2016</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>Bull Temple Road,</span> Basavangudi, Bangalore-560019</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p> +91-80-26622130-35</p>
+				</div>
+				<div>
+					<i class="fa fa-fax"></i>
+					<p>+91-80-26614357</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">lms.bmsce@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+
+			</div>
+
+		</footer>
+    </div>
+    <!-- /#wrapper -->
+	<!-- jQuery 
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript 
+    <script src="js/bootstrap.min.js"></script>-->
+</body>
+</html>

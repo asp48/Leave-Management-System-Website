@@ -1,0 +1,52 @@
+.panel-google-plus > .panel-body {
+	margin:0px;
+	padding:0px;
+}
+.panel-google-plus > .panel-body > .col-sm-10 > h3 {
+    margin:0px;
+	padding:5px;
+    font-size: 16px;
+    font-weight: 700;
+}
+.panel-google-plus > .panel-body > .col-sm-10 >  h5 {
+    color: rgb(153, 153, 153);
+    font-size: 14px;
+	padding:5px;
+    font-weight: 400;
+	margin:0px;
+}
+.panel-google-plus > .panel-body > .col-sm-10 > .down {
+    position: absolute;
+    top: 25px;
+    right: 8px;
+}
+.panel-google-plus > .panel-google-plus-comment {
+    display: none;
+    padding: 10px 20px 15px;
+    border-top: 1px solid rgb(229, 229, 229);
+    background-color: rgb(245, 245, 245);
+}
+.panel-google-plus.panel-google-plus-show-comment > .panel-google-plus-comment {
+    display: block;
+}
+.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea {
+    float: right;
+    width: 100%;
+}
+.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > textarea {
+    display: block;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(217, 217, 217);
+    box-shadow: rgba(0, 0, 0, 0.0470588) 0px 1px 0px 0px;
+    resize: vertical;
+}
+.panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > .btn {
+    margin-top: 10px;
+    margin-right: 8px;
+}
+/*@media (min-width: 992px) {
+    .panel-google-plus > .panel-google-plus-comment > .panel-google-plus-textarea > .btn {
+        width: auto;
+    }    
+}*/

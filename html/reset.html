@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+     <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+   
+         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+     <title>Apply Leave</title>
+     
+	 <!-- The following is for footer-->
+	  <link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+	 <script src="reset.js"></script>
+<style>
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 50%;
+  height: 50%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color:white;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+</style>
+		</head>
+  <body style="background-color:white">
+  <div id="wrapper">
+               <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#292c2f;">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html" style="padding:0;"><img src="logo.jpg" width="70%"/></a>
+            </div>
+            <!-- Top Menu Items -->
+            <ul class="nav navbar-right top-nav">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> Amit Prabhu <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="nav navbar-nav side-nav">
+				 <li>
+					<div class="profile-userpic">
+					<img src="http://cdn.business2community.com/wp-content/uploads/2014/04/profile-picture.jpg" class="img-responsive" alt="">
+				    </div>
+                    <div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Amit S Prabhu
+					</div>
+				</div>				 
+					</li>				
+					<li>
+                        <a href="index.html"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="charts.html"><i class="fa fa-fw fa-bar-chart-o"></i> Leave Report</a>
+                    </li>
+                    <li class="active">
+                        <a href="tables.html"><i class="fa fa-fw fa-table"></i> Set RH Dates</a>
+                    </li>
+                    <li>
+                        <a href="forms.html"><i class="fa fa-fw fa-edit"></i> Reset CL,RH,EL</a>
+                    </li>
+                    
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </nav>  
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+                       <ol class="breadcrumb">
+                            <li class="active">
+                                <i class="fa fa-fw fa-table"></i> Set RH Dates
+                            </li>
+                        </ol>
+            <div class="jumbotron">
+                    <h2>Reset CL,RH,EL</h2>
+                    <p>This will reset CL to 12, RH to 2 and add 10 to current EL of all employees</p>
+                    <p><a id ='rsetbtn' class="btn btn-primary btn-lg" role="button">Reset &raquo;</a>
+                    </p>
+                </div>
+	 </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+		</div>
+    <footer class="footer-distributed">
+
+			<div class="footer-left">
+			    <img style="background-color:white;border-radius:50%;" src="logosm.png" width="20%">
+                <p class="footer-company-name">BMSCE &copy; 2016</p>
+			</div>
+
+			<div class="footer-center">
+
+				<div>
+					<i class="fa fa-map-marker"></i>
+					<p><span>Bull Temple Road,</span> Basavangudi, Bangalore-560019</p>
+				</div>
+
+				<div>
+					<i class="fa fa-phone"></i>
+					<p> +91-80-26622130-35</p>
+				</div>
+				<div>
+					<i class="fa fa-fax"></i>
+					<p>+91-80-26614357</p>
+				</div>
+
+				<div>
+					<i class="fa fa-envelope"></i>
+					<p><a href="mailto:support@company.com">lms.bmsce@gmail.com</a></p>
+				</div>
+
+			</div>
+
+			<div class="footer-right">
+				<div class="footer-icons">
+
+					<a href="#"><i class="fa fa-facebook"></i></a>
+					<a href="#"><i class="fa fa-twitter"></i></a>
+					<a href="#"><i class="fa fa-linkedin"></i></a>
+				</div>
+
+			</div>
+
+		</footer>
+    <!-- /#wrapper -->
+<!-- jQuery 
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript 
+    <script src="js/bootstrap.min.js"></script>-->
+  </body>
+</html>

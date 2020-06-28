@@ -1,0 +1,292 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Signup - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	
+	<!--link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"-->
+    
+	
+	<style type="text/css">
+                .mycolor{
+            color : #72c02c;
+        }        
+        .myborder{
+            padding: 20px;;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: 0px 0px 3px 0px #72c02c;
+            -moz-box-shadow:    0px 0px 3px 0px #72c02c;
+            box-shadow:         0px 0px 3px 0px #72c02c;
+        }
+        .mybutton{
+            position: relative;
+            left: 50%;
+            top: 193px;
+
+        }
+        .margin-bottom-20 {
+            margin-bottom: 20px;
+
+        }
+        .btn-u:hover {
+            background: #5fb611;
+        }
+        .btn-u:hover, .btn-u:focus, .btn-u:active, .btn-u.active, .open .dropdown-toggle.btn-u {
+            background: #5fb611;
+        }
+        .btn-u:hover {
+            color: #fff;
+            text-decoration: none;
+            -webkit-transition: all 0.3s ease-in-out;
+            -moz-transition: all 0.3s ease-in-out;
+            -o-transition: all 0.3s ease-in-out;
+            transition: all 0.3s ease-in-out;
+        }
+        .btn-u {
+            background: #72c02c;
+        }
+        .btn-u {
+            white-space: nowrap;
+            border: 0;
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 400;
+            padding: 6px 13px;
+            position: relative;
+            background: #72c02c;
+            display: inline-block;
+            text-decoration: none;
+        }
+        .input-group-addon {
+            border-right: 0;
+            /*color: #b3b3b3;*/
+            font-size: 14px;
+            background: #fff;
+            padding: 6px 12px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 1;
+            color: #555;
+            text-align: center;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .input-group .form-control {
+            float: left;
+            width: 100%;
+            margin-bottom: 0;
+        }
+        .form-control {
+            box-shadow: none;
+        }
+        .form-control {
+            display: block;
+            width: 100%;
+            height: 34px !important;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.428571429;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid  #72c02c !important;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+            -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script>
+     function readURL(input) {
+       if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function (e) {
+            document.getElementById('preview').src=e.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+    }
+ }
+ </script>
+ 
+ 
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+ 
+ 
+ <script type = "text/javascript" language = "javascript">
+   $(document).ready(function(){
+        
+	$("#butt").click(function(){
+		var a=document.getElementById("id1").value;
+	    var b=document.getElementById("id2").value;
+		var c=document.getElementById("id3").value;
+		var d=document.getElementById("id4").value;
+		var e=document.getElementById("id5").value;
+		var f=document.getElementById("id6").value;
+		var g=document.getElementById("id7").value;
+		var h=document.getElementById("id8").value;
+		var i=document.getElementById("id9").value;
+		var j=document.getElementById("id10").value;
+		var k=document.getElementById("id11").value;
+		var l=document.getElementById("id12").value;
+		var m=document.getElementById("id13").value;
+		var n=document.getElementById("id14").value;
+		
+		if(a==""||b==""||c==""||d==""||e==""||f==""||g==""||h==""||i==""||j=="Select No of Restricted Holidays"||k=="Select No of Casual Leave"||l==""||m==""||n=="")
+		   alert("One or more fields are empty!");
+		else if(m!=n){
+		   alert("Password not matching!");
+		}
+		else {  
+		
+		$.post("reg.php",
+        {
+		  name: a,
+          uname:b,
+		  fid:c,
+		  desg:d,
+		  dept:e,
+		  mobno:f,
+		  offno:g,
+		  email:h,
+		  add:i,
+		  rh:j,
+		  cl:k,
+		  el:l,
+		  pass:m			
+        },
+        function(data,status){
+            if(data=="400")
+			    alert("Succesfully Registered!");
+			 else if(data=="401")
+			    alert("Faculty Id already used!");
+			else if(data=="402")
+				 alert("Username already used!");
+			else{
+				 alert("Designation is wrong!");
+            }
+        });}
+    });
+});
+
+</script>
+
+
+ 
+</head>
+<body>
+<br />
+<div class="container">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+	       <form accept-charset="utf-8"> 
+         <div class="row myborder">
+             <h4 style="color: #7EB59E; margin: initial; margin-bottom: 10px;">Sign Up!</h4><hr>
+            <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Full Name" name="name" id="id1" type="text" required>                                                        
+			</div>
+            <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Username" name="uname" id="id2" type="text" required>                                    
+			</div>
+            <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-tag mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Id" name="fid" id="id3" type="text" required>                                    
+			</div>
+            <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user mycolor"></i></span>
+                <!--input size="60" maxlength="255" class="form-control" placeholder="Designation" name="desg" id="id4" type="text" required-->                               
+				<select class="form-control" id="id4" name="desg">
+                  <option>Assistant Professor</option>
+                   <option>Associate Professor</option>
+                   <option>HOD</option>
+                 </select>
+			</div>
+            <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Department" name="dept" id="id5" type="text" required>                                    
+			</div>
+            <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-phone mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Mobile" name="mobno" id="id6" type="text" required>                                    
+			</div>
+             <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-phone mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Office Number" name="offno" id="id7" type="text" required>                                   
+			</div>           
+		     <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-envelope mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Email" name="email" id="id8" type="email" required>                                    
+			</div>           
+		     <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-home mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Address" name="add" id="id9" type="text" required> 
+                 <!--textarea class="form-control" rows="15" id="id9" name="add" placeholder="Address"></textarea-->				
+			</div>           
+		    <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-inbox mycolor"></i></span>
+                <!--input size="60" maxlength="255" class="form-control" placeholder="Rh" name="rh" id="id10" type="text" required-->  
+                <select class="form-control" name="rh" id="id10" >
+				    <option>Select No of Restricted Holidays</option>
+					<option>1</option>
+					<option>2</option>
+				</select> 				
+			</div>           
+            <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-inbox mycolor"></i></span>
+                <!--input size="60" maxlength="255" class="form-control" placeholder="Cl" name="cl" id="id11" type="text" required--> 
+                <select class="form-control"  id="id11" name="cl"><option>Select No of Casual Leave</option></select>	
+                <script type="text/javascript">
+                  for(var j=1;j<=12;j++){
+                    var opt=document.createElement('option');
+                    opt.setAttribute('value',j);
+                    opt.appendChild(document.createTextNode(j));
+                    document.getElementById("id11").appendChild(opt);
+                 } 
+               </script> 				
+			</div>           		  
+            <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-inbox mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Number of Earned leaves" name="el" id="id12" type="text" required>                                    
+			</div>           		            
+            <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Password" name="pass" id="id13" type="password" required>                                   
+		    </div>           		
+		    <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-lock mycolor"></i></span>
+                <input size="60" maxlength="255" class="form-control" placeholder="Confirm Password" name="conpass" id="id14" type="password" required>                                    
+		    </div>           
+		    <div class="input-group margin-bottom-20">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-import"></i></span>
+                 <input size="60" id="imgfile"  name="UserRegistration[image]"  class="form-control" type="file" onchange="readURL(this)" /> 
+               <div style="vertical-align:middle"> <img id="preview" class="img-circle img-responsive" src="http://placehold.it/200x200" alt="your image" width="35%" /> </div>
+		    </div>  
+		       <div class="row">
+                <div class="col-md-12">
+                    <input class="btn-u pull-left" id="butt" type="button" value="Register" />
+                </div>
+            </div>
+        </div>
+		</form>
+        <div class="col-md-2"></div>
+    </div>
+	 
+      </div>
+	  
+    
+
+</body>
+</html>
