@@ -2,7 +2,7 @@
 A website which automates the leave management process in Educational Institutions, by intelligently adapting to HR policy of the organization, decreasing paperwork and enabling the process with efficient record maintenance.
 
 ## Existing System :
-In the existing system many colleges follows manual procedure in which employees fill an application form and submit to the respective authorities and have to keep   inquiring in the office regarding the status. Hence it is a time consuming process. Establishment section people have to manually feed application data into computer for record maintenance. All these things make leave management, a tedious task.
+In the existing system many colleges follow manual procedure in which employees fill an application form and submit to the respective authorities and have to keep   inquiring in the office regarding the status. Hence it is a time consuming process. Establishment section people have to manually feed application data into computer for record maintenance. All these things make leave management, a tedious task.
 
 ## Proposed System :
 In the proposed system work-flow is automated and employees get instant notification of the status of their applied leaves. Every accepted leave, gets saved in the database, reducing the manual work of establishment section. It gives details of previously applied leaves to each employee. It gives details about extra periods to each person, assigned as alternates by a person on leave. It lists employees on leave to Admin. All these things make leave management process  time-efficient and reliable. Also, since the process is digitalized, it completely eliminates paperwork.
